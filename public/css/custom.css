@@ -1,0 +1,349 @@
+/* GLOBALS */
+body{
+    zoom: 0.99;
+    background-color: #dddddd;
+    background-image: url("../../public/img/debut-light.png");
+     background-attachment: fixed;
+}
+div.dropdown, div.dropdown.open{
+    background: none;
+}
+nav.navbar ul.dropdown-menu{
+    border: 0;
+    background: #32373a;
+    margin-right: -24px;
+    border-radius: 0;
+    margin-top: 13px;
+}
+nav.navbar ul.dropdown-menu li a{
+    color: white;
+}
+nav.navbar .dropdown-toggle{
+    background: none;
+    border: none;
+    color: white;
+}
+.content-holder{
+    background-image: url('../../public/img/002-subtle-light-pattern-background-texture.jpg');
+}
+
+footer {
+    color: white !important;
+}
+p, small, a, td{
+    font-weight: 400;
+}
+@media (min-width: 766px){
+    .main{
+        margin-left: 14.5%;
+    }
+}
+nav.navbar, .content-holder{
+    width: 100%;
+    margin: 0 auto;
+}
+.btn{
+	border-radius: 0px !important;
+    font-size: 12px !important;
+}
+.btn .btn-primary{
+	background-color: #36bae2 !important;
+}
+.btn .btn-primary:hover{
+	background-color: #1da0c8 !important;
+}
+.panel{
+	border-radius: 0px !important;
+}
+.panel-body input[type=checkbox]:checked + label{
+    text-decoration: none !important;
+    color: inherit !important;
+}
+.panel-body input[type=checkbox] + label {
+    font-weight: 500 !important;
+}
+.panel-heading{
+    background-color: #0086CD !important;
+}
+.panel-default .panel-heading {
+    background: #fff;
+    border-bottom: 1px solid #e9ecf2;
+    color: #444444;
+    font-weight: 500;
+    color: #e9ecf2;
+    border-radius: 0px;
+    font-size: 12px;
+}
+.panel-heading span {
+    border-radius: 0px !important;
+}
+.panel-heading .fa-toggle-up, .panel-heading .fa-toggle-down {
+    color: white;
+}
+h4.timeline-title {
+    color: #444;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 10px;
+}
+h4.timeline-title a{
+    color: #444;
+}
+h4.timeline-title a:hover{
+    text-decoration: none;
+    color: #30A5FF;
+}
+.timeline > li > .timeline-badge{
+    background-color: transparent !important;
+}
+h4.card-title{
+    color: #444;
+    font-weight: 500 !important;
+}
+h5.card-subtitle{
+    color: #555;
+}
+h6.card-subtitle{
+    color: #777;
+}
+.panel-settings, .panel-toggle{
+    background-color: transparent !important;
+    border-width: 0px !important;
+    background: transparent; !important;
+}
+.name-format{
+    text-transform: capitalize; !important;
+}
+/* END GLOBAL CSS */
+
+/*********************************************************************************************/
+
+/* DATATABLE CSS */
+table.dataTable thead th, table.dataTable thead td {
+    border-bottom: 1px solid transparent !important;
+}
+table.dataTable.no-footer {
+    border-bottom: 1px solid transparent !important;
+}
+table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+    background-color: transparent !important;
+}
+table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+    background-color: transparent !important;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border-top-width: 0px;
+}
+.table>thead>tr>td{
+    font-size: 14px;
+}
+.table>tbody>tr>td{
+    font-size: 12px;
+}
+.dataTables_length{
+    display: none;
+}
+.dataTables_wrapper {
+    margin-top: -38px;
+    background-color: white;
+    padding: 10px;
+}
+.dataTables_wrapper  input[type="search"] {
+    background-color: white;
+    border: 1px solid #ededed;
+    font-size: 12px;
+    padding: 10px 10px 10px 10px;
+    font-weight: 500 !important;
+}
+a.paginate_button.current {
+    border-radius: 0px !important;
+    border: 1px solid #d2d2d2 !important;
+    background: white !important;
+    font-size: 12px !important;
+}
+a.paginate_button:hover {
+    background: #a5a5a5 !important;
+    color: #ada0a0 !important;
+    border: 1px solid #f5f3f3 !important;
+    font-size: 12px !important;
+}
+div.dataTables_info {
+    font-size: 12px !important;
+}
+a#employees_table_previous {
+    font-size: 12px !important;
+}
+a#employees_table_next {
+    font-size: 12px !important;
+}
+div#employees_table_filter label {
+    font-weight: 400 !important;
+}
+a.paginate_button {
+    font-size: 12px !important;
+}
+#employees_table tbody td {
+    font-size: 11px;
+}
+.label-profile i{
+    font-size: 12px;
+}
+
+/* END DATATABLE CSS */
+
+/* MODAL CSS*/
+.modal-content{
+    border-radius: 0px !important;
+}
+/* END MODAL CSS*/
+
+/*********************************************************************************************/
+
+/* SELECT CSS */
+.select2-container--default .select2-selection--single {
+    background-color: #fff !important;
+    border: 1px solid #ddd !important;
+     border-radius: 0px !important; 
+    height: 35px !important;
+    padding: 2px !important;
+    font-size: 12px !important;
+}   
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+    margin-top: 5px !important;
+}
+/* END SELECT CSS */
+
+/* Form Validation */
+label.error {
+    color: red;
+    font-weight: 500 !important;
+    font-size: 11px;
+    margin-left: 6px;
+    margin-top: 5px;
+}
+#supervisor_id-error{
+    margin-top: 70px;
+    position: absolute;
+    margin-left: -77px;
+}
+#team_name-error {
+     margin-top: 70px;
+    position: absolute;
+    margin-left: -132px;
+}
+#account_id-error{
+    margin-top: 70px;
+    position: absolute;
+    margin-left: -77px;
+}
+label#gender_id-error {
+    position: absolute;
+    margin-left: -9px;
+    margin-top: 30px;
+}
+/* END VALIDATION CSS */
+
+/*********************************************************************************************/
+
+/* FORM CSS */
+.message-success{
+    color: green;
+}
+.message-error{
+    color: red;
+}
+input[type=text], input[type=password],input.form-control{
+    border-radius: 0px !important;
+    height: 35px !important;
+    font-size: 12px !important;
+}
+h1.page-header{
+    margin-left: 20px;
+}
+input[type=radio]{
+    cursor: pointer;
+}
+label#bb{ 
+    padding: 10px;
+    display: table;
+    background-color: buttonface;
+    color: #2a2a2a;
+    }
+input[type="file"]#image_uploader {
+    display: none;
+}
+.radio-label{
+    font-weight: 500 !important;
+    color: #222;
+    cursor: pointer;
+}
+.asterisk-required:after{
+    content: " *";
+    color: red;
+    font-weight: 700 !important;
+}
+.header-list{
+    list-style: none;
+    display: inline-flex;
+    background-color: #30a5ff;
+    width: 100%;
+    margin-bottom: 0px;
+}
+.header-list li, .header-list li a{
+    padding: 15px;
+    margin-left: 10px;
+    color: white;
+
+}
+.header-list li a:hover{
+    text-decoration: none;
+    background-color: #70bbf5;
+}
+.header-list li.active a{
+    text-decoration: none;
+    background-color: #70bbf5;
+}
+.header-list li:first-child{
+    margin-left:50px;
+}
+.dropdown{
+    border-radius: 0px !important;
+}
+.section-header{
+    background-color: #0086CD !important;
+    width: 100%;
+    color: white;
+    padding: 10px 10px 10px 15px;
+    font-weight: 500;
+}
+.section-header h4{
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+}
+label {
+    font-size: 12px;
+    font-weight: 500 !important;
+}
+.min-widt-200{
+    min-width: 200px !important;
+}
+/* END FORM CSS */
+.navbar-top-links .login-btn a{
+    color: white;
+    background: none;
+    padding: 20px;
+    cursor: pointer;
+}
+.page-item.active .page-link{
+    color: white !important;
+}
+button#toggle-sidebar{
+    margin: 18px 0px;
+    background: transparent;
+    border: none;
+    color: white;
+}
+button#toggle-sidebar span{
+    font-size: 22px;
+}
