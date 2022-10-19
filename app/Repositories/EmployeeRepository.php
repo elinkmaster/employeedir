@@ -99,7 +99,7 @@ class EmployeeRepository implements RepositoryInterface
         if($manager){
             $employee->manager_name = $manager->fullName();
         }
-        
+
         $employee->dept_code = $request->dept_code;
         $employee->team_name = $request->team_name;
         $employee->gender = $request->gender_id;
@@ -414,6 +414,16 @@ class EmployeeRepository implements RepositoryInterface
                     
                     $employees = $employees->where('id', '<>', 1)->orderBy('last_name', 'ASC')->paginate(10);
 
+                    /* Filter Manager and Supervisor Names */
+                    foreach($employees as $key=>$employee) {
+                        $manager = User::find($employee->manager_id);
+                        $supervisor = User::find($employee->supervisor_id);
+
+                        $employee->manager_name = (empty($manager) ? 'NO MANAGER' : $employee->manager_name);
+                        $employee->supervisor_name = (empty($supervisor) ? 'NO SUPERVISOR' : $employee->supervisor_name);
+
+                    }
+
                     return view('employee.employees')->with('employees', $employees )->with('request', $request)->with('departments', $departments)->with('positions', $positions);
                 }
 
@@ -457,6 +467,16 @@ class EmployeeRepository implements RepositoryInterface
 
                 $employees = $employees->where('id', '<>', 1)->orderBy('last_name', 'ASC')->paginate(10);
 
+                /* Filter Manager and Supervisor Names */
+                foreach($employees as $key=>$employee) {
+                    $manager = User::find($employee->manager_id);
+                    $supervisor = User::find($employee->supervisor_id);
+
+                    $employee->manager_name = (empty($manager) ? 'NO MANAGER' : $employee->manager_name);
+                    $employee->supervisor_name = (empty($supervisor) ? 'NO SUPERVISOR' : $employee->supervisor_name);
+
+                }
+    
                 return view('employee.employees')->with('employees', $employees)->with('request', $request)->with('departments', $departments)->with('positions', $positions);
             }
         }
@@ -464,6 +484,7 @@ class EmployeeRepository implements RepositoryInterface
         $employees = new User;
         $employees = $employees->activeEmployees();
         $query = array();
+
         if ($request->has('keyword') && $request->get('keyword') != "") {
             $employees = $employees->where(function($query) use($request)
             {
@@ -507,6 +528,15 @@ class EmployeeRepository implements RepositoryInterface
 
         $employees = $employees->where('id', '<>', 1)->orderBy('last_name', 'ASC')->paginate(10);
 
+        /* Filter Manager and Supervisor Names */
+        foreach($employees as $key=>$employee) {
+            $manager = User::find($employee->manager_id);
+            $supervisor = User::find($employee->supervisor_id);
+
+            $employee->manager_name = (empty($manager) ? 'NO MANAGER' : $employee->manager_name);
+            $employee->supervisor_name = (empty($supervisor) ? 'NO SUPERVISOR' : $employee->supervisor_name);
+
+        }
         
         return view('guest.employees')->with('employees', $employees )->with('request', $request)->with('departments', $departments)->with('positions', $positions);
     }

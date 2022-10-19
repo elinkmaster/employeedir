@@ -147,12 +147,7 @@
                                                         <input type="hidden" name="leave_id" value="{{ $leave_request->id }}">
                                                         <button class="btn btn-primary">Recommend</button>
                                                     </form>
-						@elseif($leave_request->isForApproval())
-                                                    <form action="{{ url('leave/approve') }}" method="POST" style="display: inline-flex;">
-                                                        {{ csrf_field() }}
-                                                        <input type="hidden" name="leave_id" value="{{ $leave_request->id }}">
-                                                        <button class="btn btn-primary">Approve</button>
-                                                    </form>
+					
 						@endif
 						@if($leave_request->isForNoted())
                                                     <form action="{{ url('leave/noted') }}" method="POST" style="display: inline-flex;">
@@ -161,19 +156,18 @@
                                                         <button class="btn btn-primary">Noted</button>
                                                     </form>
 						@endif
-                        <!--usertype 3 is manager and 1 is administrator tweak date 10/14/22 -->    
-						@if(Auth::user()->isAdmin() || Auth::user()->usertype == 3 )
+                         
+						@if(Auth::user()->isAdmin()==1 || Auth::user()->usertype == 3 )
                          <button class="btn btn-danger" data-target="#declinemodal" data-toggle="modal">Decline/Cancel</button>
-                         <a href="/leave/{{ $leave_request->id }}/edit" class="btn btn-info">Update</a>
-						@elseif(Auth::user()->isAdmin()  || Auth::user()->usertype == 3)
+
 						<a href="/leave/{{ $leave_request->id }}/edit" class="btn btn-info">Update</a>
                                                       <form action="{{ url('leave/approve') }}" method="POST" style="display: inline-flex;">
                                                         {{ csrf_field() }}
                                                         <input type="hidden" name="leave_id" value="{{ $leave_request->id }}">
                                                         <button class="btn btn-primary">Approve</button>
-                         <!--usertype 3 is manager -->                    </form>
-						@elseif(Auth::user()->isAdmin() || Auth::user()->usertype == 3)
-                        <a href="/leave/{{ $leave_request->id }}/edit" class="btn btn-info">Update</a>
+                                          </form>
+				
+                       
                         @endif
                                             <?php
                                             endif;
